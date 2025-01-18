@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 function GitHubProfile() {
   const [profile, setProfile] = useState(null);
   const [repos, setRepos] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     // Fetch user profile data from GitHub API
@@ -35,7 +36,7 @@ function GitHubProfile() {
 
       <h3 className="text-2xl font-semibold mt-10 text-center">Repositories</h3>
       <ul className="mt-4">
-        {repos.slice(0, 5).map((repo) => (
+        {repos.slice(0,4).map((repo) => (
           <li key={repo.id} className="mb-4 text-center">
             <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-indigo-400">
               {repo.name}

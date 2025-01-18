@@ -16,7 +16,7 @@ function LeetCodeStats() {
   }
 
   return (
-    <div>
+    <div class='flex items-center md:flex-row flex-col '>
     <PieChart
     series={[
       {
@@ -30,6 +30,16 @@ function LeetCodeStats() {
     width={400}
     height={200}
   />
+  <div>
+    <div class='md:h-full h-min p-4 bg-black mt-16 md:mt-0 text-white font-bold rounded-md text-center md:p-7 border-blue-300'>
+        Ranking:{stats.ranking}
+        <br/>
+        Acceptance:{stats.acceptanceRate}
+        <br/>
+        Total Solved:{stats.totalSolved}
+
+    </div>
+  </div>
   </div>
   );
 }
