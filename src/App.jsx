@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Project from './components/Project';
+import LeetCodeStats from './components/LeetcodeStatus';
+import GitHubProfile from './components/Githubstats'; // Import the new component
 
 function App() {
   const [text, setText] = useState('');
@@ -75,11 +77,22 @@ function App() {
         </div>
       </section>
 
+      {/* LeetCodeStats Graph Section */}
+      <section id="leetcode-stats" className="py-24 px-4 w-full bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500">
+        <h2 className="text-3xl font-semibold mb-6 text-center">LeetCode Stats</h2>
+        <div className="flex justify-center">
+          <LeetCodeStats /> {/* LeetCode graph component */}
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="text-white py-24 px-4 w-full bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500">
         <h2 className="text-3xl font-semibold mb-6 text-center">My Projects</h2>
         <Project />
       </section>
+
+      {/* GitHub Profile Section */}
+      <GitHubProfile /> {/* Add GitHubProfile component here */}
 
       {/* Footer Section */}
       <section id="contact" className="text-white py-24 px-4 w-full bg-gray-800 text-center">
