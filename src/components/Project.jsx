@@ -5,7 +5,7 @@ import React from 'react';
 const Projects = () => {
   return (
     <div className="text-white mt-12 mb-6">
-      <h2 className="text-3xl text-center font-semibold mb-6">My Projects</h2>
+   
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
         {/* ReserveURSeat Project */}
         <div className="bg-indigo-400 rounded-lg shadow-xl p-4 hover:bg-blue-500 transition-all">

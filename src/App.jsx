@@ -5,22 +5,21 @@ import Project from './components/Project';
 function App() {
   const [text, setText] = useState('');
   const fullText =
-    'I am Abhinab Handique, a final-year B.Tech student in Electronics and Instrumentation at the National Institute of Technology, Silchar, with a CGPA of 8.59. I have a strong foundation in software development and a passion for creating innovative solutions...';
+    'I am Abhinab Handique, a final-year B.Tech student in Electronics and Instrumentation at the National Institute of Technology, Silchar. With a CGPA of 8.59, I have developed a strong foundation in software development. I am passionate about technology, particularly in building innovative solutions that can have a meaningful impact on the world. I have experience working with various technologies such as React, Node.js, MongoDB, and Express.js. Apart from my academic pursuits, I enjoy problem-solving and actively participate in competitive programming. I strive to continuously improve myself and look forward to exploring new opportunities in software development and technology.'; // Updated text about yourself
 
   useEffect(() => {
     let index = 0;
 
     const interval = setInterval(() => {
-      if (index < fullText.length) {
-        setText((prev) => prev + fullText[index]);
-        index++;
-      } else {
+      setText((prev) => prev + fullText[index]);
+      index++;
+      if (index === fullText.length) {
         clearInterval(interval);
       }
     }, 50); // Adjust typing speed here
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fullText]);
 
   return (
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center px-4">
@@ -42,12 +41,38 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="text-white py-24 px-4 w-full bg-gray-800 text-center">
-        <h2 className="text-3xl font-semibold mb-6">About Me</h2>
-        <p className="text-lg sm:text-xl max-w-4xl mx-auto">
-          I am passionate about technology and have experience in full-stack development, especially with React, Node.js, and MongoDB. I love solving complex problems and creating impactful solutions.
+      {/* Coding Profiles Section */}
+      <section id="coding-profiles" className="text-white py-24 px-4 w-full bg-gray-800 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Coding Profiles</h2>
+        <p className="text-lg sm:text-xl mb-6">
+          Here are my profiles on various platforms where I engage in coding challenges and contribute to open-source projects:
         </p>
+        <div className="flex justify-center gap-8">
+          <a
+            href="https://leetcode.com/u/abhinab_2002/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-white hover:text-indigo-400"
+          >
+            LeetCode
+          </a>
+          <a
+            href="https://github.com/Abhinab-Handique"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-white hover:text-indigo-400"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.geeksforgeeks.org/user/abhinabhandique20/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-white hover:text-indigo-400"
+          >
+            GeeksforGeeks
+          </a>
+        </div>
       </section>
 
       {/* Projects Section */}
