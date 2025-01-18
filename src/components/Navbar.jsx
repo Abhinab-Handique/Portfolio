@@ -14,7 +14,7 @@ const Navbar = () => {
 
         {/* Navbar Links */}
         <div className="hidden md:flex space-x-10">
-          <Link to="about" smooth={true} duration={500} className="text-white hover:text-yellow-500">About</Link>
+          <Link to="home" smooth={true} duration={500} className="text-white hover:text-yellow-500">About</Link>
           <Link to="projects" smooth={true} duration={500} className="text-white hover:text-yellow-500">Projects</Link>
           <Link to="contact" smooth={true} duration={500} className="text-white hover:text-yellow-500">Contact</Link>
         </div>
